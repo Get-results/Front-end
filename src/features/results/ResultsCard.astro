@@ -1,0 +1,36 @@
+---
+import type { ResultsEntity } from './ResultsEntity';
+import { fetchResults } from './ResultsApi';
+
+const results: ResultsEntity[] = await fetchResults();
+---
+
+<div class="results-container">
+    {results.map(result => (
+            <div class="result-card" data-id={result.id}>
+                <h2>{result.team1Name} vs {result.team2Name}</h2>
+                <p>Date : {result.date}</p>
+                <p>Score : {result.team1Score} - {result.team2Score}</p>
+                {result.matchLink && <a href={result.matchLink} target="_blank">Voir plus</a>}
+            </div>
+    ))}
+</div>
+
+<style>
+    .results-container {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .result-card {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #f9f9f9;
+    }
+
+    .result-card h2 {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+</style>
