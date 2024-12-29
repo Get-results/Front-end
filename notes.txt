@@ -1,0 +1,3 @@
+- Stratégie: Récupérer le fetch dans le script Astro et rebuild chaque semaines pour actualiser les informations
+- Ca permet de garantir les informations
+- "Feature-Driven Architecture"

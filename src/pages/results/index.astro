@@ -1,0 +1,31 @@
+---
+import Header from "../../components/Header.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import ResultsCard from '../../features/results/ResultsCard.astro';
+import type { ResultsEntity } from '../../features/results/ResultsEntity';
+import { fetchResults } from '../../features/results/ResultsApi';
+
+const results: ResultsEntity[] = await fetchResults();
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+<Header />
+<main>
+    <h1>Résultats</h1>
+
+    <div class="results-container">
+        {results.map(result => (
+                <ResultsCard result={result} />
+        ))}
+    </div>
+
+</main>
+<Footer />
+</body>
+</html>

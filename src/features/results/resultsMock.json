@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "date": "2024-01-01",
+    "team1Name": "Équipe A",
+    "team1Score": 3,
+    "team2Name": "Équipe B",
+    "team2Score": 2,
+    "matchLink": "https://example.com/match/1",
+    "competition": "Championnat Régional",
+    "day": "1"
+  },
+  {
+    "id": 2,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  },
+  {
+    "id": 2,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  },
+  {
+    "id": 3,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  },
+  {
+    "id": 4,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  },
+  {
+    "id": 5,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  },
+  {
+    "id": 6,
+    "date": "2024-01-02",
+    "team1Name": "Équipe C",
+    "team1Score": 1,
+    "team2Name": "Équipe D",
+    "team2Score": 3,
+    "matchLink": null,
+    "competition": "null",
+    "day": null
+  }
+]
