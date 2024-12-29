@@ -3,10 +3,12 @@ import type { ResultsEntity } from './ResultsEntity';
 
 const { result }: { result: ResultsEntity } = Astro.props;
 ---
-
-<div class="result-card">
-    <h2>{result.team1Name} vs {result.team2Name}</h2>
-    <p>Date : {result.date}</p>
-    <p>Score : {result.team1Score} - {result.team2Score}</p>
-    {result.matchLink && <a href={result.matchLink} target="_blank">Voir plus</a>}
+<div class="text-center p-8 m-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <span class="font-bold text-lg">{result.team1Name} vs {result.team2Name}</span>
+    <p class="text-sm text-gray-600 dark:text-gray-400">{result.date}</p>
+    <p class="text-xl font-semibold">{result.team1Score} - {result.team2Score}</p>
+    {result.matchLink && (
+            <a href={`https://www.ffhandball.fr/${result.matchLink}`} target="_blank" class="text-blue-500 hover:underline">                Voir plus
+            </a>
+    )}
 </div>

@@ -6,25 +6,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import ResultsCard from '../../features/results/ResultsCard.astro';
 import type { ResultsEntity } from '../../features/results/ResultsEntity';
 import { fetchResults } from '../../features/results/ResultsApi';
+import CheckboxFilter from "../../components/CheckboxFilter.astro";
 
 const results: ResultsEntity[] = await fetchResults();
+
+let selectedOptions: string[] = [];
+
+function handleFilterChange(option: string, isChecked: boolean) {
+    if (isChecked) {
+        selectedOptions = [...selectedOptions, option];
+    } else {
+        selectedOptions = selectedOptions.filter(item => item !== option);
+    }
+    console.log("Options sélectionnées :", selectedOptions); // Debug
+}
+
 ---
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
 <body>
 <Header />
-<main>
-    <h1>Résultats</h1>
 
-    <div class="results-container">
+<h1 class="text-2xl font-bold text-center mb-8">Résultats des Matchs</h1>
+
+<main>
+    <CheckboxFilter selectedOptions={selectedOptions} onChange={handleFilterChange} />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {results.map(result => (
                 <ResultsCard result={result} />
         ))}
     </div>
-
 </main>
 <Footer />
 </body>
